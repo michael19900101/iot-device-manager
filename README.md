@@ -15,29 +15,30 @@
 
 ```
 iot-device-manager/
-├── src/main/java/com/michael/iot/
-│   ├── server/                 # 物联网设备管理系统核心模块
-│   │   ├── DeviceInfo.java     # 设备信息实体类
-│   │   ├── DeviceStatus.java   # 设备状态枚举
-│   │   ├── DeviceManager.java  # 设备管理器
-│   │   ├── IoTNettyServer.java # 物联网TCP服务器
-│   │   ├── IoTDeviceHandler.java # 设备处理器
-│   │   ├── WebSocketServer.java # WebSocket服务器
-│   │   ├── WebSocketHandler.java # WebSocket处理器
-│   │   ├── DeviceStatusListener.java # 设备状态监听器接口
-│   │   ├── DeviceDataListener.java # 设备数据监听器接口
-│   │   └── IoTApplication.java # 应用启动类
-│   └── test/                   # 设备模拟器测试模块
-│       ├── IoTDeviceSimulator.java # 单个设备模拟器
-│       └── IoTDeviceBatchSimulator.java # 批量设备模拟器
+├── backend/                   # 后端Java项目
+│   ├── src/main/java/com/michael/iot/
+│   │   ├── server/                 # 物联网设备管理系统核心模块
+│   │   │   ├── DeviceInfo.java     # 设备信息实体类
+│   │   │   ├── DeviceStatus.java   # 设备状态枚举
+│   │   │   ├── DeviceManager.java  # 设备管理器
+│   │   │   ├── IoTNettyServer.java # 物联网TCP服务器
+│   │   │   ├── IoTDeviceHandler.java # 设备处理器
+│   │   │   ├── WebSocketServer.java # WebSocket服务器
+│   │   │   ├── WebSocketHandler.java # WebSocket处理器
+│   │   │   ├── DeviceStatusListener.java # 设备状态监听器接口
+│   │   │   ├── DeviceDataListener.java # 设备数据监听器接口
+│   │   │   └── IoTApplication.java # 应用启动类
+│   │   └── test/                   # 设备模拟器测试模块
+│   │       ├── IoTDeviceSimulator.java # 单个设备模拟器
+│   │       └── IoTDeviceBatchSimulator.java # 批量设备模拟器
+│   ├── logs/                      # 日志文件
+│   └── pom.xml                    # Maven配置
 ├── frontend/                   # Vue3前端界面
 │   ├── src/
 │   │   ├── App.vue            # 主应用组件
 │   │   └── main.js            # 应用入口
 │   ├── package.json           # 前端依赖
 │   └── vite.config.js         # Vite配置
-├── logs/                      # 日志文件
-└── pom.xml                    # Maven配置
 ```
 
 ## 🏗️ 后端代码架构
@@ -117,11 +118,13 @@ com.michael.iot.server/
 
 ```bash
 # 编译项目
+cd backend 
+
 mvn clean compile
 
 # 启动物联网服务器（TCP端口8888，WebSocket端口8889）
-mvn compile
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.server.IoTApplication 8888 8889
+mvn compile && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.server.IoTApplication 8888 8889
+```
 ```
 
 **启动成功标志**:
@@ -150,8 +153,8 @@ npm run dev
 
 ```bash
 # 编译并运行单个设备模拟器
-mvn compile
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.test.IoTDeviceSimulator localhost 8888 "温度传感器" "传感器"
+cd backend && mvn compile && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.test.IoTDeviceSimulator localhost 8888 "温度传感器" "传感器"
+```
 
 
 ```
@@ -234,7 +237,7 @@ DATA|数据内容
 - 数据上报间隔: 60秒
 
 ### 日志配置
-- 日志文件: `logs/iot-device-manager.log`
+- 日志文件: `backend/logs/iot-device-manager.log`
 - 日志级别: INFO
 - 日志格式: 时间戳 + 线程 + 级别 + 类名 + 消息
 
@@ -286,17 +289,17 @@ DATA|数据内容
 
 5. **依赖项缺失**
    ```bash
-   # 重新编译并下载依赖
-   mvn clean compile
+# 重新编译并下载依赖
+cd backend && mvn clean compile
    
    # 检查类路径设置
-   mvn dependency:build-classpath
+cd backend && mvn dependency:build-classpath
    ```
 
 ### 日志查看
 ```bash
 # 查看服务器日志
-tail -f logs/iot-device-manager.log
+tail -f backend/logs/iot-device-manager.log
 
 
 

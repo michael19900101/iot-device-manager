@@ -42,31 +42,33 @@ src/main/java/com/michael/iot/test/
 
 ```bash
 # 编译项目
-mvn compile
+cd backend && mvn compile
 
 # 启动100个设备（默认）
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 100
 
 # 启动50个设备
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 50
 
 # 连接到指定服务器
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator 192.168.1.100 8888 100
+```
 ```
 
 ### 方法二：直接运行Java程序
 
 ```bash
 # 编译项目
-mvn compile
+cd backend && mvn compile
 
 # 启动100个设备
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator \
      localhost 8888 100
+```
 ```
 
 ### 方法三：使用Socket命令服务器
@@ -75,8 +77,9 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
 
 ```bash
 # 启动批量设备模拟器
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 100
+```
 
 # 在另一个终端连接命令服务器
 telnet localhost 4567
@@ -243,28 +246,30 @@ Stopping all devices...
 
 ```bash
 # 小规模测试（10个设备）
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 10
 
 # 中等规模测试（100个设备）
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 100
 
 # 大规模测试（500个设备）
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 500
 
 # 极限测试（1000个设备）
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 1000
+```
 ```
 
 ### 单独设备控制测试
 
 ```bash
 # 启动测试
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 5
+```
 
 # 测试步骤:
 # 1. 启动5个设备
@@ -279,7 +284,7 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
 
 ```bash
 # 启动测试
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 3
 
 # 测试步骤:
@@ -305,7 +310,7 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
 
 ```bash
 # 启动测试
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 2
 
 # 测试步骤:
@@ -329,7 +334,7 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
 
 ```bash
 # 启动测试
-java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
+cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 3
 
 # 测试步骤:
@@ -384,7 +389,7 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
 1. **编译失败**
    ```bash
    # 清理并重新编译
-   mvn clean compile
+   cd backend && mvn clean compile
    ```
 
 2. **连接失败**
@@ -393,8 +398,7 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
    lsof -i :8888
    
    # 启动服务器
-   mvn compile
-   java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.server.IoTApplication 8888 8889
+   cd backend && mvn compile && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.server.IoTApplication 8888 8889
    ```
 
 3. **设备启动超时**
@@ -407,6 +411,10 @@ java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev
 - **启动日志**: 显示每个设备的启动状态
 - **错误日志**: 显示连接失败和异常信息
 - **状态日志**: 显示设备运行状态
+
+### 日志文件位置
+- **服务器日志**: `backend/logs/iot-device-manager.log`
+- **实时查看**: `tail -f backend/logs/iot-device-manager.log`
 
 ## 📝 更新日志
 

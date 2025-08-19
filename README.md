@@ -1,6 +1,6 @@
 # IoT设备管理系统
 
-这是一个完整的物联网设备管理系统，基于Netty构建高性能服务器，提供设备连接管理、实时监控、状态跟踪等功能。系统包含后端服务器和Vue3前端界面。
+这是一个完整的物联网设备管理系统，基于Netty构建高性能服务器，提供设备连接管理、实时监控、状态跟踪等功能。系统包含后端服务器和Vue3前端界面，非常适合新手学习使用！🔥🔥🔥
 
 
 ## 🚀 项目状态
@@ -8,7 +8,6 @@
 ✅ **物联网服务器**: 运行正常 (TCP:8888, WebSocket:8889)  
 ✅ **前端界面**: Vue3 + Element Plus  
 ✅ **设备模拟器**: 支持多设备并发测试  
-  
 ✅ **日志系统**: 完整的日志记录和监控  
 
 ## 📁 项目结构
@@ -119,12 +118,10 @@ com.michael.iot.server/
 ```bash
 # 编译项目
 cd backend 
-
 mvn clean compile
 
 # 启动物联网服务器（TCP端口8888，WebSocket端口8889）
 mvn compile && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.server.IoTApplication 8888 8889
-```
 ```
 
 **启动成功标志**:
@@ -154,9 +151,6 @@ npm run dev
 ```bash
 # 编译并运行单个设备模拟器
 cd backend && mvn compile && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" com.michael.iot.test.IoTDeviceSimulator localhost 8888 "温度传感器" "传感器"
-```
-
-
 ```
 
 ### 📡 设备通信协议
@@ -289,23 +283,21 @@ DATA|数据内容
 
 5. **依赖项缺失**
    ```bash
-# 重新编译并下载依赖
-cd backend && mvn clean compile
+   # 重新编译并下载依赖
+   mvn clean compile
    
    # 检查类路径设置
-cd backend && mvn dependency:build-classpath
+   mvn dependency:build-classpath
    ```
 
 ### 日志查看
-```bash
-# 查看服务器日志
-tail -f backend/logs/iot-device-manager.log
+   ```bash
+  # 查看服务器日志
+  tail -f backend/logs/iot-device-manager.log
 
-
-
-# 查看前端日志
-cd frontend && npm run dev
-```
+  # 查看前端日志
+  cd frontend && npm run dev
+   ```
 
 ### 系统监控
 ```bash

@@ -56,7 +56,6 @@ cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.o
 cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator 192.168.1.100 8888 100
 ```
-```
 
 ### 方法二：直接运行Java程序
 
@@ -69,7 +68,6 @@ cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.o
      com.michael.iot.test.IoTDeviceBatchSimulator \
      localhost 8888 100
 ```
-```
 
 ### 方法三：使用Socket命令服务器
 
@@ -81,6 +79,7 @@ cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.o
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 100
 ```
 
+```bash
 # 在另一个终端连接命令服务器
 telnet localhost 4567
 # 或者
@@ -261,7 +260,6 @@ cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.o
 cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)" \
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 1000
 ```
-```
 
 ### 单独设备控制测试
 
@@ -271,6 +269,7 @@ cd backend && java -cp "target/classes:$(mvn dependency:build-classpath -Dmdep.o
      com.michael.iot.test.IoTDeviceBatchSimulator localhost 8888 5
 ```
 
+```bash
 # 测试步骤:
 # 1. 启动5个设备
 # 2. 连接命令服务器: telnet localhost 4567

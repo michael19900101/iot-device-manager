@@ -1,0 +1,25 @@
+{
+  "name": "iot-device-manager",
+  "version": "1.0.0",
+  "description": "物联网设备管理前端界面",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4",
+    "element-plus": "^2.3.8",
+    "@element-plus/icons-vue": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  }
+}
+
+
+
+
+
+

@@ -26,6 +26,12 @@ This is a complete IoT device management system built with Netty for high-perfor
 
 *1000 virtual devices connecting to server simultaneously, real-time display of device online status and data reporting*
 
+### 📹 Device Offline Detection Demo
+
+![IoT Device Offline Detection Demo](screenshots/device-offline-detection.gif)
+
+*Automatic device offline detection on heartbeat timeout, real-time device status updates and frontend interface refresh*
+
 ## 📸 Project Screenshots
 
 ### 🖥️ Main Interface Display

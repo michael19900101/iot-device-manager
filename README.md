@@ -8,7 +8,32 @@
 ✅ **物联网服务器**: 运行正常 (TCP:8888, WebSocket:8889)  
 ✅ **前端界面**: Vue3 + Element Plus  
 ✅ **设备模拟器**: 支持多设备并发测试  
-✅ **日志系统**: 完整的日志记录和监控  
+✅ **日志系统**: 完整的日志记录和监控
+
+## 📸 项目截图
+
+### 🖥️ 主界面展示
+
+![主仪表板](screenshots/main-dashboard.png)
+
+*主仪表板界面 - 显示设备统计、实时状态和分页设备列表*
+
+### 📊 功能演示
+
+| 功能   | 截图 | 说明                  |
+|------|------|---------------------|
+| 设备筛选 | ![设备筛选](screenshots/filter-demo.png) | 支持按状态、类型、名称筛选设备     |
+| 设备详情 | ![设备详情](screenshots/device-details.png) | 查看设备详细信息和最新数据       |
+| 分页显示 | ![分页功能](screenshots/pagination-demo.png) | 支持10/20/50/100条记录每页 |
+| 状态通知 | ![状态通知](screenshots/notification-demo.png) | 设备上线下线实时通知          |
+| 设备控制 | ![设备控制](screenshots/device-control.png) | 设备批量模拟器控制操作         |
+
+### 🔧 系统运行
+
+| 组件 | 截图 | 说明 |
+|------|------|------|
+| 后端服务器 | ![服务器运行](screenshots/server-running.png) | Netty服务器运行状态 |
+| 批量模拟器 | ![批量模拟器](screenshots/batch-simulator.png) | 1000个设备并发测试 |
 
 ## 📁 项目结构
 

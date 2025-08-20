@@ -147,3 +147,9 @@ application.properties
 application.yml
 application-*.properties
 application-*.yml
+
+# Screenshots (keep these in git)
+!screenshots/
+!screenshots/*.png
+!screenshots/*.jpg
+!screenshots/*.jpeg

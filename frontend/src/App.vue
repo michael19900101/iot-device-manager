@@ -672,6 +672,11 @@ export default {
   flex-direction: column;
 }
 
+.stat-card .el-card__header {
+  text-align: center;
+  padding: 15px 20px;
+}
+
 .stat-card .el-card__body {
   flex: 1;
   display: flex;
@@ -727,6 +732,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* 统计卡片的标题居中 */
+.stat-card .card-header {
+  justify-content: center;
 }
 
 .el-table {
